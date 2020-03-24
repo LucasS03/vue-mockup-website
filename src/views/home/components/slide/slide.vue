@@ -11,8 +11,9 @@
       <div class="carousel-inner">
         <div 
           v-for="(slide, id) in slides" :key="id + '-slide'" 
-          :class="['carousel-item', !id ? 'active' : '']">
-          <img :src="slide.photo" class="d-block w-100" :alt="slide.alt" :style="`height: ${height}px`">
+          :class="['carousel-item', !id ? 'active' : '']"
+          :style="`height: ${height}px`">
+          <img :src="slide.photo" class="" :alt="slide.alt">
           <div class="carousel-caption d-none d-md-block">
             <h5>{{ slide.title }}</h5>
             <p>{{ slide.subtitle }}</p>
@@ -82,10 +83,10 @@ export default {
     }
     .carousel-inner {
       .carousel-item {
-        width: 100%;
-        // height: 100%;
-        // height: 650px;
-        object-fit: cover;
+        img {
+          width: 100%;
+          object-fit: cover !important;
+        }
       }
     }
   }
