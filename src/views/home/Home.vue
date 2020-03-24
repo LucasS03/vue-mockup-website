@@ -1,0 +1,180 @@
+<template>
+  <div class="home">
+
+    <sh-modal v-model="showCertificates">
+      <div class="modal-content">
+        <div class="modal-certificates">
+          <div 
+            class="modal-list-certificates mb-2" 
+            v-for="(c, index) in certificates" 
+            :key="index + '-certificate-modal'">
+
+            <div class="info text-truncate">
+              <img :src="c.photo" :alt="c.alt">
+              <span>{{ c.title }}</span>
+            </div>
+            <div class="date ml-2">
+              <span>{{ c.date | date }}</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </sh-modal>
+
+    <section>
+      <slide></slide>
+    </section>
+
+    <section class="new-section about">
+      <h3>ABOUT</h3>
+      <about 
+        :certificates="certificates"
+        @showCertificates="showCertificates = true">
+      </about>
+    </section>
+
+    <section class="new-section services">
+      <h3>SERVICES</h3>
+    </section>
+
+    <section class="new-section contact">
+      <h3>CONTACT</h3>
+    </section>
+
+  </div>
+</template>
+
+<script>
+import slide from './components/slide/slide'
+import about from './components/about/about'
+import ShModal from '@/components/modal/Modal'
+
+export default {
+  name: 'Home',
+
+  components: {
+    slide,
+    about,
+    ShModal
+  },
+
+  data() {
+    return {
+      showCertificates: false,
+      certificates: [
+        { 
+          id: 1, 
+          photo: require('@/assets/images/about/certificate.png'), 
+          alt: 'certificate 1',
+          title: 'Certificate One',
+          date: new Date().toISOString()
+        },
+        { 
+          id: 2, 
+          photo: require('@/assets/images/about/certificate.png'), 
+          alt: 'certificate 1',
+          title: 'Certificate Two',
+          date: new Date().toISOString()
+        }
+      ]
+    }
+  },
+
+  filters: {
+    date(data) {
+      let date = new Date(data)
+      return date.getFullYear()
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+$custom-green:  #28a745;
+$custom-black: #343a40;
+$custom-white: #ffffff;
+$custom-grey:  #f6f6f6;
+
+.home {
+  background-color: $custom-grey;
+
+  .trace {
+    &::after { 
+      content: "";
+      display: block;
+      width: 70px;
+      height: 1px;
+      margin: 5px auto;
+      background-color: $custom-green;
+    }
+  }
+
+  .new-section {
+    margin-top: 30px;
+
+    h3 {
+      margin-bottom: 30px;
+      @extend .trace;
+    }
+  }
+
+  .modal-content {
+    background-color: $custom-grey;
+    padding: 10px;
+    border-radius: 5px; 
+    max-height: 400px;
+    overflow-y: auto;
+
+    @media(max-width: 576px) {
+      min-width: 250px;
+      max-width: 300px;
+    }
+    @media(min-width: 576px) {
+      min-width: 350px;
+      max-width: 450px;
+    }
+    @media(min-width: 960px) {
+      min-width: 500px;
+      max-width: 600px;
+    }
+    @media(min-width: 1200px) {
+      min-width: 600px;
+      max-width: 900px;
+    }
+    
+    .modal-certificates {
+      max-height: 60%;
+      overflow-y: auto;
+
+      .modal-list-certificates {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+
+        .info {
+          img {
+            width: 70px;
+            height: 70px;
+            border-radius: 3px;
+          }
+        }
+        // .date {
+
+        // }
+      }
+    }
+  }
+
+  // .about {
+  // }
+
+  // .services {
+  // }
+
+  // .contact {
+  // }
+}
+</style>
