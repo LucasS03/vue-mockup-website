@@ -13,7 +13,7 @@
           v-for="(slide, id) in slides" :key="id + '-slide'" 
           :class="['carousel-item', !id ? 'active' : '']"
           :style="`height: ${height}px`">
-          <img :src="slide.photo" class="" :alt="slide.alt">
+          <img :src="slide.photo" :alt="slide.alt">
           <div class="carousel-caption d-none d-md-block">
             <h5>{{ slide.title }}</h5>
             <p>{{ slide.subtitle }}</p>
@@ -83,8 +83,9 @@ export default {
     }
     .carousel-inner {
       .carousel-item {
+        width: 100%;
         img {
-          width: 100%;
+          // TODO: correct width from the last slide to the first and vice versa
           object-fit: cover !important;
         }
       }

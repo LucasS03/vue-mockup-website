@@ -22,11 +22,11 @@
       </div>
     </sh-modal>
 
-    <section>
+    <section ref="home">
       <slide></slide>
     </section>
 
-    <section class="new-section about">
+    <section class="new-section about" ref="about">
       <h3>ABOUT</h3>
       <about 
         :certificates="certificates"
@@ -34,12 +34,14 @@
       </about>
     </section>
 
-    <section class="new-section services">
+    <section class="new-section services" ref="services">
       <h3>SERVICES</h3>
+      <services></services>
     </section>
 
-    <section class="new-section contact">
+    <section class="new-section contact" ref="contact">
       <h3>CONTACT</h3>
+      <contact></contact>
     </section>
 
   </div>
@@ -48,6 +50,8 @@
 <script>
 import slide from './components/slide/slide'
 import about from './components/about/about'
+import services from './components/services/services'
+import contact from './components/contact/contact'
 import ShModal from '@/components/modal/Modal'
 
 export default {
@@ -56,6 +60,8 @@ export default {
   components: {
     slide,
     about,
+    services, 
+    contact,
     ShModal
   },
 
@@ -86,7 +92,11 @@ export default {
       let date = new Date(data)
       return date.getFullYear()
     }
-  }
+  },
+
+  mounted() {
+    this.$root.refs = this.$refs
+  },
 }
 </script>
 

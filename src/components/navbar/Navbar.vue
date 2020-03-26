@@ -1,12 +1,12 @@
 <template>
   <div class="container-fluid fixed-top p-0 menu">
-    <!-- TODO: Alter color with scroll -->
     <nav 
       :class="[scrolled ? 'bg-dark navbar-dark custom-shadow' : 'navbar-dark', 'navbar navbar-expand-lg']">
       <router-link class="navbar-brand" to="/">
         YOUR COMPANY
       </router-link>
 
+      <!-- TODO: on click, set background dark -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,35 +14,20 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
         
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/">HOME</router-link>
+          <li id="home" class="nav-item active" @click="link('home')">
+            <span class="nav-link">HOME</span>
           </li>
 
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">ABOUT</router-link>
+          <li id="about" class="nav-item" @click="link('about')">
+            <span class="nav-link">ABOUT</span>
           </li>
 
-          <li class="nav-item dropdown">
-            <router-link 
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              class="nav-link dropdown-toggle"
-              to="/">
-              SERVICES
-            </router-link>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">WEBSITES</a>
-              <a class="dropdown-item" href="#">APPS</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">CONSULTING</a>
-            </div>
+          <li id="services" class="nav-item" @click="link('services')">
+            <span class="nav-link">SERVICES</span>
           </li>
 
-          <li class="nav-item">
-            <router-link class="nav-link" to="/">CONTACT</router-link>
+          <li id="contact" class="nav-item" @click="link('contact')">
+            <span class="nav-link">CONTACT</span>
           </li>
         </ul>
       </div>
@@ -51,6 +36,8 @@
 </template>
 
 <script>
+import { debounce } from '@/util.js'
+
 export default {
   name: 'Navbar',
 
@@ -61,8 +48,23 @@ export default {
   },
 
   methods: {
+    link(item) {
+      window.scrollTo({ 
+        top: this.$root.refs[item].getBoundingClientRect().top + window.scrollY - 70, 
+        behavior: 'smooth' 
+      });
+    },
     handleScroll () {
+      // background navbar
       this.scrolled = window.scrollY > 40;
+
+      // item navbar active with slide animation
+      Object.keys(this.$root.refs).forEach(i => {
+        if(this.$root.refs[i].getBoundingClientRect().top < 71){
+          document.getElementsByClassName('nav-item').forEach(k => k.classList.remove('active'))
+          document.getElementById(i).classList.add("active")
+        }
+      })
     }
   },
 
@@ -97,6 +99,11 @@ export default {
     .nav-item {
       font-size: 14px;
       text-align: left;
+      cursor: pointer;
+
+      span {
+        user-select: none;
+      }
     }
   }
 }
