@@ -26,18 +26,20 @@
       <slide></slide>
     </section>
 
-    <section class="new-section about" ref="about">
-      <h3>ABOUT</h3>
-      <about 
-        :certificates="certificates"
-        @showCertificates="showCertificates = true">
-      </about>
-    </section>
+    <div class="container">
+      <section class="new-section about" ref="about">
+        <h3>ABOUT</h3>
+        <about 
+          :certificates="certificates"
+          @showCertificates="showCertificates = true">
+        </about>
+      </section>
 
-    <section class="new-section services" ref="services">
-      <h3>SERVICES</h3>
-      <services></services>
-    </section>
+      <section class="new-section services" ref="services">
+        <h3>SERVICES</h3>
+        <services :services="services"></services>
+      </section>
+    </div>
 
     <section class="new-section contact" ref="contact">
       <h3>CONTACT</h3>
@@ -82,6 +84,40 @@ export default {
           alt: 'certificate 1',
           title: 'Certificate Two',
           date: new Date().toISOString()
+        }
+      ],
+      services: [
+        {
+          id: 1,
+          icon: require('@/assets/images/services/climbing.png'),
+          photo: require('@/assets/images/services/climbing.jpg'),
+          title: 'Climbing',
+          alt: 'Climbing',
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.'
+        },
+        {
+          id: 2,
+          icon: require('@/assets/images/services/trail.png'),
+          photo: require('@/assets/images/services/trail.jpg'),
+          title: 'Trail',
+          alt: 'Trail',
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.'
+        },
+        {
+          id: 3,
+          icon: require('@/assets/images/services/camp.png'),
+          photo: require('@/assets/images/services/camp.jpg'),
+          title: 'Camp',
+          alt: 'Camp',
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.'
+        },
+        {
+          id: 4,
+          icon: require('@/assets/images/services/waterfall.png'),
+          photo: require('@/assets/images/services/waterfall.jpg'),
+          title: 'Waterfall',
+          alt: 'Waterfall',
+          description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.'
         }
       ]
     }

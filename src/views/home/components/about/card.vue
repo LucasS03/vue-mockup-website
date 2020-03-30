@@ -38,7 +38,7 @@ $custom-grey:  #f6f6f6;
   .content {
     flex: 1;
     background-color: #ffffff;
-    box-shadow: 3px 3px 5px rgba($custom-black, $alpha: 0.3);
+    box-shadow: 0 0 10px rgba($color: $custom-black, $alpha: 0.4);
     border-radius: 3px;
 
     .header {
