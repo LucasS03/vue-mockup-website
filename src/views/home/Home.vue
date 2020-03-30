@@ -43,7 +43,7 @@
 
     <section class="new-section contact" ref="contact">
       <h3>CONTACT</h3>
-      <contact :social="social"></contact>
+      <contact :social="social" :contact="contact"></contact>
     </section>
 
   </div>
@@ -120,9 +120,11 @@ export default {
           description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.'
         }
       ],
-      social: {
+      contact: {
         mail: 'company@mail.com',
         address: 'Street company\'s adress, Nº 123, Your Country',
+      },
+      social: {
         whatsapp: 'https://api.whatsapp.com/send?phone=5500900000000&text=I%20contacted%20you%20through%20your%20website',
         facebook: 'https://facebook.com/',
         twitter: 'https://twitter.com/',

@@ -2,16 +2,18 @@
   <div class="contact">
     <div class="row">
       <div class="message col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-        <label for="mail" class="mb-0">Your mail</label>
-        <input type="text" id="mail" class="mb-2" placeholder="Example: your@mail.com">
+        <form id="form" action="" class="d-flex flex-column align-items-start w-100">
+          <label for="mail" class="mb-0">Your mail</label>
+          <input type="text" id="mail" v-model="mail.mail" required="required" class="mb-2" placeholder="Example: your@mail.com">
 
-        <label for="subject" class="mb-0">Subject</label>
-        <input type="text" id="subject" class="mb-2" placeholder="Example: I want to hire your service">
+          <label for="subject" class="mb-0">Subject</label>
+          <input type="text" id="subject" v-model="mail.subject" required="required" class="mb-2" placeholder="Example: I want to hire your service">
 
-        <label for="message" class="mb-0">Message</label>
-        <textarea id="message" class="mb-2" placeholder="Hi, I want to hire your service"></textarea>
+          <label for="message" class="mb-0">Message</label>
+          <textarea id="message" v-model="mail.message" required="required" class="mb-2" placeholder="Hi, I want to hire your service"></textarea>
 
-        <button class="btn btn-success w-100">Send</button>
+          <button value="Save" @click="send()" type="submit" class="btn btn-success w-100">Send</button>
+        </form>
       </div>
       <div class="social col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <h4>Our social networks</h4>
@@ -28,11 +30,11 @@
 
         <div class="mail mt-3">
           <i class="mdi mdi-email"></i> 
-          <span>{{ social.mail }}</span>
+          <span>{{ contact.mail }}</span>
         </div>
         <div class="address">
           <i class="mdi mdi-map-marker"></i>
-          <span>{{ social.address }}</span>
+          <span>{{ contact.address }}</span>
         </div>
         
       </div>
@@ -52,6 +54,40 @@ export default {
     social: {
       type: Object,
       required: true
+    },
+    contact: {
+      type: Object,
+      required: true
+    }
+  },
+
+  data() {
+    return {
+      mail: {
+        mail: '',
+        subject: '',
+        message: ''
+      }
+    }
+  },
+
+  methods: {
+    send() {
+      try {
+        var inp = document.getElementById("form");
+
+        if (inp.checkValidity()) {
+          // implement your request
+          
+          this.$toast.success("Message sent");
+          this.mail.mail = ''
+          this.mail.subject = ''
+          this.mail.message = ''
+        }
+      } catch (error) {
+        console.error(error)
+        this.$toast.error("There was an error sending your message");
+      }
     }
   }
 }
