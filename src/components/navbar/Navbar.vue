@@ -60,7 +60,7 @@ export default {
 
       // item navbar active with slide animation
       Object.keys(this.$root.refs).forEach(i => {
-        if(this.$root.refs[i].getBoundingClientRect().top < 71){
+        if(this.$root.refs[i].getBoundingClientRect().top < window.innerHeight-(window.innerHeight/2)){
           document.getElementsByClassName('nav-item').forEach(k => k.classList.remove('active'))
           document.getElementById(i).classList.add("active")
         }

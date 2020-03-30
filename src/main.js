@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+// Material Design
+import '@mdi/font/css/materialdesignicons.min.css'
+
 // Bootstrap
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
