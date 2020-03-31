@@ -3,7 +3,7 @@
     <nav 
       :class="[scrolled ? 'bg-dark navbar-dark custom-shadow' : 'navbar-dark', 'navbar navbar-expand-lg']">
       <router-link class="navbar-brand" to="/">
-        YOUR COMPANY
+        {{ $t('company') }}
       </router-link>
 
       <!-- TODO: on click, set background dark -->
@@ -15,20 +15,39 @@
         <ul class="navbar-nav ml-auto">
         
           <li id="home" class="nav-item active" @click="link('home')">
-            <span class="nav-link">HOME</span>
+            <span class="nav-link">{{ $t('title.home') }}</span>
           </li>
 
           <li id="about" class="nav-item" @click="link('about')">
-            <span class="nav-link">ABOUT</span>
+            <span class="nav-link">{{ $t('title.about') }}</span>
           </li>
 
           <li id="services" class="nav-item" @click="link('services')">
-            <span class="nav-link">SERVICES</span>
+            <span class="nav-link">{{ $t('title.services') }}</span>
           </li>
 
           <li id="contact" class="nav-item" @click="link('contact')">
-            <span class="nav-link">CONTACT</span>
+            <span class="nav-link">{{ $t('title.contact') }}</span>
           </li>
+
+          <li class="nav-item">
+            <div class="dropdown nav-link">
+              <button class="dropdown-toggle" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img :src="iconLanguage" alt="language">
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="language">
+                <span class="dropdown-item" href="#" @click="selectLanguage('en', 'united-kingdom')">
+                  <img src="@/assets/images/icons/united-kingdom.png" alt="Language United Kingdom">
+                  ENGLISH
+                </span>
+                <span class="dropdown-item" href="#" @click="selectLanguage('pt_BR', 'brazil')">
+                  <img src="@/assets/images/icons/brazil.png" alt="Language Brasil">
+                  PORTUGUESE
+                </span>
+              </div>
+            </div>
+          </li>
+
         </ul>
       </div>
     </nav>
@@ -43,7 +62,8 @@ export default {
 
   data () {
     return {
-      scrolled: false
+      scrolled: false,
+      iconLanguage: require('@/assets/images/icons/united-kingdom.png')
     };
   },
 
@@ -65,6 +85,10 @@ export default {
           document.getElementById(i).classList.add("active")
         }
       })
+    },
+    selectLanguage(language, icon) {
+      this.$i18n.locale = language
+      this.iconLanguage = require(`@/assets/images/icons/${icon}.png`)
     }
   },
 
@@ -79,6 +103,11 @@ export default {
 </script>
 
 <style lang="scss">
+$custom-green:  #28a745;
+$custom-black: #343a40;
+$custom-white: #ffffff;
+$custom-grey:  #f6f6f6;
+
 .menu {
   
   .custom-shadow {
@@ -88,7 +117,8 @@ export default {
   nav {
     transition: all 0.7s ease;
     
-    .navbar-toggler {
+    .navbar-toggler, 
+    .dropdown button {
       &:focus, 
       &:active {
         outline: none;
@@ -103,6 +133,31 @@ export default {
 
       span {
         user-select: none;
+      }
+    }
+
+    .dropdown {
+      button {
+        background-color: rgba(0,0,0,0);
+        border: none;
+        color: $custom-white;
+
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+      .dropdown-menu .dropdown-item {
+        color: $custom-black;
+        padding: 5px;
+        &:active {
+          background-color: rgba(0,0,0,0);
+        }
+
+        img {
+          height: 20px;
+          width: 20px;
+        }
       }
     }
   }

@@ -4,11 +4,10 @@
       <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 about-us">
         <div class="content">
           <div class="header">
-            <h4>ABOUT US</h4>
+            <h4>{{ $t('subtitle.about.about_us') }}</h4>
           </div>
           <div class="body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facilis, mollitia similique nobis rem quaerat amet incidunt, cumque expedita architecto minus dolorem tempore quod sequi deserunt necessitatibus odit laborum delectus?
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, fuga reprehenderit tempora voluptate ex modi doloribus alias odio iste minima, distinctio, doloremque labore quae magnam eum autem est nam neque!
+            {{ $t('text.about.about_us') }}
           </div>
         </div>
       </div>
@@ -16,7 +15,7 @@
         <div class="content justify-content-between">
           <div>
             <div class="header">
-              <h4>CERTIFICATES</h4>
+              <h4>{{ $t('subtitle.about.certificates') }}</h4>
             </div>
             <div class="body">
               <div class="certificate text-truncate" v-for="c in certificates" :key="c.id">
@@ -31,16 +30,16 @@
             </div>
           </div>
           <div class="footer">
-            <button class="btn btn-bd-success" @click="$emit('showCertificates')">SHOW MORE</button>
+            <button class="btn btn-bd-success" @click="$emit('showCertificates')">{{ $t('button.show_more') }}</button>
           </div>
         </div>
       </div>
     </div>
 
     <div class="row m-0">
-      <card title="Company Mission" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab temporibus libero similique voluptatem unde."></card>
-      <card title="Company Values" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab temporibus libero similique voluptatem unde, natus necessitatibus, quibusdam aspernatur laboriosam velit consequatur corrupti molestias neque. Eum deleniti soluta assumenda nobis!"></card>
-      <card title="Company Vision" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab temporibus libero similique voluptatem unde, natus necessitatibus, quibusdam aspernatur laboriosam."></card>
+      <card :title="$t('subtitle.about.mission')" :description="$t('text.about.mission')"></card>
+      <card :title="$t('subtitle.about.values')" :description="$t('text.about.values')"></card>
+      <card :title="$t('subtitle.about.vision')" :description="$t('text.about.vision')"></card>
     </div>
   </div>
 </template>

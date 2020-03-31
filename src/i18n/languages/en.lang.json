@@ -1,0 +1,66 @@
+{ 
+  "company": "Your Company",
+  "title": {
+    "about": "ABOUT",
+    "contact": "CONTACT",
+    "home": "HOME",
+    "services": "SERVICES"
+  },
+  "subtitle": {
+    "about": {
+      "about_us": "ABOUT US",
+      "certificates": "CERTIFICATES",
+      "mission": "Company Mission",
+      "values": "Company Values",
+      "vision": "Company Vision"
+    },
+    "services": {
+      "climbing": "Climbing",
+      "trail": "Trail",
+      "camp": "Camp",
+      "waterfall": "Waterfall"
+    },
+    "slide": {
+      "lighthouse": "Lighthouse",
+      "mountains": "Mountains",
+      "beaches": "Beaches"
+    },
+    "contact": {
+      "social": "Our social networks"
+    }
+  },
+  "text": {
+    "our": "Our",
+    "about": {
+      "about_us": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus facilis, mollitia similique nobis rem quaerat amet incidunt, cumque expedita architecto minus dolorem tempore quod sequi deserunt necessitatibus odit laborum delectus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, fuga reprehenderit tempora voluptate ex modi doloribus alias odio iste minima, distinctio, doloremque labore quae magnam eum autem est nam neque!",
+      "mission": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab temporibus libero similique voluptatem unde.",
+      "values": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab temporibus libero similique voluptatem unde, natus necessitatibus, quibusdam aspernatur laboriosam velit consequatur corrupti molestias neque. Eum deleniti soluta assumenda nobis!",
+      "vision": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ab temporibus libero similique voluptatem unde, natus necessitatibus, quibusdam aspernatur laboriosam."
+    },
+    "services": {
+      "climbing": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id beatae perspiciatis, commodi dicta fuga praesentium atque facere!",
+      "trail": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id beatae perspiciatis, commodi dicta fuga praesentium atque facere!",
+      "camp": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id beatae perspiciatis, commodi dicta fuga praesentium atque facere!",
+      "waterfall": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id beatae perspiciatis, commodi dicta fuga praesentium atque facere!"
+    },
+    "slide": {
+      "beaches": "The best beaches in the world",
+      "mountains": "Discover the best mountains to climb",
+      "lighthouse": "Find the most fantastic around the world"
+    }
+  },
+  "label": {
+    "mail": "Your mail",
+    "subject": "Subject",
+    "message": "Message"
+  },
+  "placeholder": {
+    "mail": "Example: your@mail.com",
+    "subject": "Example: I want to hire your service",
+    "message": "Example: Hi, I want to hire your service"
+  },
+  "button": {
+    "show_more": "SHOW MORE",
+    "send": "SEND"
+  }
+}

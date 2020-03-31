@@ -3,24 +3,24 @@
     <div class="row">
       <div class="message col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <form id="form" action="" class="d-flex flex-column align-items-start w-100">
-          <label for="mail" class="mb-0">Your mail</label>
-          <input type="text" id="mail" v-model="mail.mail" required="required" class="mb-2" placeholder="Example: your@mail.com">
+          <label for="mail" class="mb-0">{{ $t('label.mail') }}</label>
+          <input type="text" id="mail" v-model="mail.mail" required="required" class="mb-2" :placeholder="$t('placeholder.mail')">
 
-          <label for="subject" class="mb-0">Subject</label>
-          <input type="text" id="subject" v-model="mail.subject" required="required" class="mb-2" placeholder="Example: I want to hire your service">
+          <label for="subject" class="mb-0">{{ $t('label.subject') }}</label>
+          <input type="text" id="subject" v-model="mail.subject" required="required" class="mb-2" :placeholder="$t('placeholder.subject')">
 
-          <label for="message" class="mb-0">Message</label>
-          <textarea id="message" v-model="mail.message" required="required" class="mb-2" placeholder="Hi, I want to hire your service"></textarea>
+          <label for="message" class="mb-0">{{ $t('label.message') }}</label>
+          <textarea id="message" v-model="mail.message" required="required" class="mb-2" :placeholder="$t('placeholder.message')">></textarea>
 
-          <button value="Save" @click="send()" type="submit" class="btn btn-success w-100">Send</button>
+          <button @click="send()" type="submit" class="btn btn-success w-100">{{ $t('button.send') }}</button>
         </form>
       </div>
       <div class="social col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-        <h4>Our social networks</h4>
+        <h4>{{ $t('subtitle.contact.social') }}</h4>
 
         <div class="social-networks">
           <a v-for="(item, index) in Object.keys(social)" :key="index"
-            data-toggle="tooltip" data-placement="bottom" :title="`Our ${item}`"
+            data-toggle="tooltip" data-placement="bottom" :title="`${$t('text.our')} ${item}`"
             v-show="social[item]" 
             :href="social[item]" 
             target="_blank">

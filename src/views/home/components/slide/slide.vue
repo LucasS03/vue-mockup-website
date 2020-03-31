@@ -19,7 +19,7 @@
             <p>{{ slide.subtitle }}</p>
             <router-link class="btn btn-success py-2 px-3 mb-2" to="/">
               <!-- :to="`/your-route/${slide.id}`" -->
-              VIEW MORE
+              {{ $t('button.show_more') }}
             </router-link>
           </div>
         </div>
@@ -38,35 +38,14 @@
 
 <script>
 export default {
-  data() {
-    return {
-      slides: [
-        {
-          id: 1,
-          photo: require('@/assets/images/carousel/1.jpeg'),
-          alt: 'Lighthouse',
-          title: 'Lighthouse',
-          subtitle: 'Find the most fantastic around the world'
-        },
-        {
-          id: 2,
-          photo: require('@/assets/images/carousel/2.jpg'),
-          alt: 'Mountains',
-          title: 'Mountains',
-          subtitle: 'Discover the best mountains to climb'
-        },
-        {
-          id: 3,
-          photo: require('@/assets/images/carousel/3.jpeg'),
-          alt: 'Beaches',
-          title: 'Beaches',
-          subtitle: 'The best beaches in the world'
-        }
-      ]
+  props: {
+    slides: {
+      type: Array,
+      required: true
     }
   },
   computed: {
-    height: () => window.innerHeight
+    height: () => window.innerHeight,
   }
 }
 </script>

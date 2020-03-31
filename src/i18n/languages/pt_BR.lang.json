@@ -1,0 +1,66 @@
+{
+  "company": "Sua Empresa",
+  "title": {
+    "about": "SOBRE",
+    "contact": "CONTATO",
+    "home": "INÍCIO",
+    "services": "SERVIÇOS"
+  },
+  "subtitle": {
+    "about": {
+      "about_us": "SOBRE NÓS",
+      "certificates": "CERTIFICADOS",
+      "mission": "Missão",
+      "values": "Valores",
+      "vision": "Visão"
+    },
+    "services": {
+      "climbing": "Escalada",
+      "trail": "Trilha",
+      "camp": "Acampamento",
+      "waterfall": "Cachoeira"
+    },
+    "slide": {
+      "lighthouse": "Farol",
+      "mountains": "Montanhas",
+      "beaches": "Praias"
+    },
+    "contact": {
+      "social": "Nossas redes sociais"
+    }
+  },
+  "text": {
+    "our": "Nossa",
+    "about": {
+      "about_us": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic libero cupiditate magnam incidunt, excepturi, sint aliquid a laborum beatae doloremque? Fugiat dicta odio soluta, assumenda placeat distinctio debitis nulla? Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic libero cupiditate magnam incidunt, excepturi, sint aliquid a laborum beatae doloremque? Fugiat dicta odio soluta, assumenda placeat distinctio debitis nulla?",
+      "mission": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic libero cupiditate magnam incidunt, excepturi, sint aliquid a laborum beatae doloremque? Fugiat dicta odio soluta, assumenda placeat distinctio debitis nulla?",
+      "values": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic libero cupiditate magnam incidunt, excepturi, sint aliquid a laborum beatae doloremque?",
+      "vision": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi hic libero cupiditate magnam incidunt, excepturi."
+    },
+    "services": {
+      "climbing": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.",
+      "trail": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.",
+      "camp": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut.",
+      "waterfall": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt cupiditate numquam neque explicabo illo at assumenda quas ut."
+    },
+    "slide": {
+      "beaches": "As melhores praias do mundo",
+      "mountains": "Descubra as melhores montanhas para escalar",
+      "lighthouse": "Encontre os mais fantásticos do mundo"
+    }
+  },
+  "label": {
+    "mail": "Seu e-mail",
+    "subject": "Assunto",
+    "message": "Mensagem"
+  },
+  "placeholder": {
+    "mail": "Exemplo: seu@email.com",
+    "subject": "Exemplo: Eu quero contratar seu serviço",
+    "message": "Exemplo: Oi, eu quero contratar seu serviço"
+  },
+  "button": {
+    "show_more": "VER MAIS",
+    "send": "ENVIAR"
+  }
+}
