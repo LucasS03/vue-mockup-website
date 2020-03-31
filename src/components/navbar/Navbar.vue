@@ -1,13 +1,12 @@
 <template>
   <div class="container-fluid fixed-top p-0 menu">
     <nav 
-      :class="[scrolled ? 'bg-dark navbar-dark custom-shadow' : 'navbar-dark', 'navbar navbar-expand-lg']">
+      :class="[scrolled || openMenu ? 'bg-dark navbar-dark custom-shadow' : 'navbar-dark', 'navbar navbar-expand-lg']">
       <router-link class="navbar-brand" to="/">
         {{ $t('company') }}
       </router-link>
 
-      <!-- TODO: on click, set background dark -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" @click="openMenu = !openMenu" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -55,14 +54,13 @@
 </template>
 
 <script>
-import { debounce } from '@/util.js'
-
 export default {
   name: 'Navbar',
 
   data () {
     return {
       scrolled: false,
+      openMenu: false,
       iconLanguage: require('@/assets/images/icons/united-kingdom.png')
     };
   },
@@ -150,10 +148,10 @@ $custom-grey:  #f6f6f6;
       .dropdown-menu .dropdown-item {
         color: $custom-black;
         padding: 5px;
+
         &:active {
           background-color: rgba(0,0,0,0);
         }
-
         img {
           height: 20px;
           width: 20px;
