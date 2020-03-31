@@ -51,24 +51,4 @@ export default {
 </script>
 
 <style lang="scss">
-.carousel-slide {
-  height: 100%;
-
-  .carousel {
-    .carousel-indicators li {
-      width: 10px;
-      height: 10px;
-      border-radius: 100%;
-    }
-    .carousel-inner {
-      .carousel-item {
-        width: 100%;
-        img {
-          // TODO: correct width from the last slide to the first and vice versa
-          object-fit: cover !important;
-        }
-      }
-    }
-  }
-}
 </style>

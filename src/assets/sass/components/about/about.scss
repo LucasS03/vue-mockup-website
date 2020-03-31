@@ -1,0 +1,81 @@
+.about {
+  .about-us {
+    display: flex;
+    padding: 20px 20px;
+    
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex: 1 !important;
+      background-color: $custom-white;
+      box-shadow: 0 0 10px rgba($color: $custom-black, $alpha: 0.4);
+      border-radius: 3px;
+
+      .header {
+        padding-top: 10px;
+
+        &::after { 
+          content: "";
+          display: block;
+          width: 70px;
+          height: 1px;
+          margin: 5px auto;
+          background-color: #0cc967;
+        }
+      }
+      .body {
+        display: grid;
+        padding: 10px;
+
+        .certificate {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 5px;
+
+          div {
+            display: flex;
+            flex-direction: row;
+            
+            &.img-title {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+
+              img {
+                height: 30px !important;
+                width: 30px !important;
+                border-radius: 15px !important;
+              }
+            }
+            &.date {
+              color: rgba($custom-black, $alpha: 0.8)
+            }
+          }
+        }
+      }
+      .footer {
+        padding: 10px;
+
+        button.btn-bd-success {
+          width: 100% !important;
+          border: 1px solid $custom-green;
+          border-radius: 3px;
+          color: rgba($custom-black, $alpha: 0.8);
+          transition: background-color .5s;
+          
+          &:hover {
+            background-color: rgba($custom-green, $alpha: 0.8);
+            color: $custom-white;
+            border-color: rgba($custom-green, $alpha: 1);
+          }
+
+          &:focus, &:active {
+            box-shadow: 0 0 5px rgba($custom-green, $alpha: 0.5);
+          }
+        }
+      }
+    }
+  }
+}

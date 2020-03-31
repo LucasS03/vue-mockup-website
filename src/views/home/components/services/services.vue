@@ -26,46 +26,6 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
-$custom-green:  #28a745;
-$custom-black: #343a40;
-$custom-white: #ffffff;
-$custom-grey:  #f6f6f6;
-
-.services {
-  .card-service {
-    padding: 0 10px;
-
-    .content {
-      padding: 20px 10px;
-      background-color: $custom-white;
-      border-radius: 3px;
-      box-shadow: 0 0 10px rgba($color: $custom-black, $alpha: 0.4);
-      cursor: default;
-      
-      .info {
-        transition: all .5s;
-      }
-      .bg {
-        display: block;
-        position: absolute;
-        border-radius: 5px;
-        width: 0%;
-        height: 0%;
-        background-size: cover;
-        background-position: center;
-        transition: all .3s;
-      }
-      &:hover {
-        .info {
-          transform: translateZ(80px) scale(0.8);
-        }
-        .bg {
-          width: 90%;
-          height: 99%;
-        }
-      }
-    }
-  }
-}
 </style>

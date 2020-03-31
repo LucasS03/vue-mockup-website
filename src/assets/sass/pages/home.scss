@@ -1,0 +1,69 @@
+.home {
+  background-color: $custom-grey;
+
+  .trace {
+    &::after { 
+      content: "";
+      display: block;
+      width: 70px;
+      height: 1px;
+      margin: 5px auto;
+      background-color: $custom-green;
+    }
+  }
+
+  .new-section {
+    margin-top: 30px;
+
+    h3 {
+      margin-bottom: 30px;
+      @extend .trace;
+    }
+  }
+
+  .modal-content {
+    background-color: $custom-grey;
+    padding: 10px;
+    border-radius: 5px; 
+    max-height: 400px;
+    overflow-y: auto;
+
+    @media(max-width: 576px) {
+      min-width: 250px;
+      max-width: 300px;
+    }
+    @media(min-width: 576px) {
+      min-width: 350px;
+      max-width: 450px;
+    }
+    @media(min-width: 960px) {
+      min-width: 500px;
+      max-width: 600px;
+    }
+    @media(min-width: 1200px) {
+      min-width: 600px;
+      max-width: 900px;
+    }
+    
+    .modal-certificates {
+      max-height: 60%;
+      overflow-y: auto;
+
+      .modal-list-certificates {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+
+        .info {
+          img {
+            width: 70px;
+            height: 70px;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+}

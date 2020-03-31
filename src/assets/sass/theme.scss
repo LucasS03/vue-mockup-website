@@ -1,0 +1,14 @@
+// Colors Theme
+@import './utils/theme/colors.scss';
+
+// Components
+@import './components/navbar/navbar.scss';
+@import './components/slide/slide.scss';
+@import './components/services/services.scss';
+@import './components/contact/contact.scss';
+@import './components/about/card.scss';
+@import './components/about/about.scss';
+
+// Pages
+@import './pages/app.scss';
+@import './pages/home.scss';

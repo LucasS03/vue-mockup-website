@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+// Theme Sass
+import './assets/sass/theme.scss'
+
 // Material Design
 import '@mdi/font/css/materialdesignicons.min.css'
 
